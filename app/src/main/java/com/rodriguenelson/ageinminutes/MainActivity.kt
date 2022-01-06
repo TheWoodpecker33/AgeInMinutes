@@ -45,16 +45,16 @@ class MainActivity : AppCompatActivity() {
 
                 val theDate = sdf.parse(selectedDate)
                 theDate?.let {
-                    val selectedDateInMinutes = theDate.time / 60000
+                    val selectedDateInSeconds = theDate.time / 1000
 
                     val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                     currentDate?.let {
 
-                        val currentDateInMinutes = currentDate.time / 60000
+                        val currentDateInSeconds = currentDate.time / 1000
 
-                        val diffInMinutes = currentDateInMinutes - selectedDateInMinutes
+                        val diffInSeconds = currentDateInSeconds - selectedDateInSeconds
 
-                        txtAgeInMinutes?.text = diffInMinutes.toString()
+                        txtAgeInMinutes?.text = diffInSeconds.toString()
                         }
                 }
             },
